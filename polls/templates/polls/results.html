@@ -1,11 +1,23 @@
-<h1>{{ question.question_text }}</h1>
+{% extends 'polls/base.html' %}
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
+{% block content %}
+<h4>{{ question.question_text }}</h4>
+
+<ul class="list-group">
+    {% for choice in question.choice_set.all %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">{{ choice.choice_text }}
+        <span class="badge badge-primary badge-pill">{{ choice.votes }}</span>
+    </li>
+    {% endfor %}
 </ul>
+<hr>
+<div class="btn-group">
+    <a class="btn btn-success" href="{% url 'polls:detail' question.id %}">Vote again?</a>
+</div>
+<div class="btn-group">
+    <a class="btn btn-info" href="{% url 'polls:index' %}">Home</a>
+</div>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
 <br>
-<a href="{% url 'polls:index' %}">Home</a>
+
+{% endblock content %}
