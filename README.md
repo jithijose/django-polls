@@ -11,3 +11,12 @@ This project created based on the instruction with the Django original documenta
 - Static files - css and javascripts for HTML (https://docs.djangoproject.com/en/3.1/intro/tutorial06/)
 - Admin page customization (https://docs.djangoproject.com/en/3.1/intro/tutorial07/)
 - Application packaging (https://docs.djangoproject.com/en/3.1/intro/reusable-apps/)
+
+### Polls Home Page
+![home-page](/images/polls-home.png)
+
+### Polls Vote Page
+![home-vote](/images/polls-vote.png)
+
+### Polls Results Page
+![home-page](/images/polls-result.png)
